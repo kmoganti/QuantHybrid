@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantHybrid Trading System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">QuantHybrid</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#strategies">Strategies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#positions">Positions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#orders">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#performance">Performance</a>
+                    </li>
+                </ul>
+                <div class="ms-auto">
+                    <button id="tradingToggle" class="btn btn-outline-danger">Trading Disabled</button>
+                    <button id="logoutBtn" class="btn btn-outline-light ms-2">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <!-- Login Form -->
+        <div id="loginForm" class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Login</h5>
+                        <form id="login">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="mainContent" class="d-none">
+            <!-- Dashboard -->
+            <div id="dashboard" class="content-section">
+                <div class="row">
+                    <!-- System Status -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                System Status
+                            </div>
+                            <div class="card-body">
+                                <div id="systemStatus">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p>CPU Usage: <span id="cpuUsage">-</span>%</p>
+                                            <p>Memory Usage: <span id="memoryUsage">-</span>%</p>
+                                            <p>Network Latency: <span id="networkLatency">-</span>ms</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Active Strategies: <span id="activeStrategies">-</span></p>
+                                            <p>Open Positions: <span id="openPositions">-</span></p>
+                                            <p>Daily P&L: <span id="dailyPnL">-</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Performance Chart -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                Performance Overview
+                            </div>
+                            <div class="card-body">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Strategies -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Active Strategies
+                            </div>
+                            <div class="card-body">
+                                <div id="activeStrategiesList"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategies -->
+            <div id="strategies" class="content-section d-none">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Trading Strategies</span>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newStrategyModal">
+                            New Strategy
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div id="strategiesList"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Positions -->
+            <div id="positions" class="content-section d-none">
+                <div class="card">
+                    <div class="card-header">
+                        Open Positions
+                    </div>
+                    <div class="card-body">
+                        <div id="positionsList"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders -->
+            <div id="orders" class="content-section d-none">
+                <div class="card">
+                    <div class="card-header">
+                        Recent Orders
+                    </div>
+                    <div class="card-body">
+                        <div id="ordersList"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance -->
+            <div id="performance" class="content-section d-none">
+                <div class="card">
+                    <div class="card-header">
+                        Performance Analytics
+                    </div>
+                    <div class="card-body">
+                        <div id="performanceMetrics"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Strategy Modal -->
+    <div class="modal fade" id="newStrategyModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Strategy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newStrategyForm">
+                        <div class="mb-3">
+                            <label class="form-label">Strategy Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Strategy Type</label>
+                            <select class="form-control" name="type" required>
+                                <option value="MA_CROSSOVER">Moving Average Crossover</option>
+                            </select>
+                        </div>
+                        <div id="strategyParameters"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveStrategy">Save Strategy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/strategies.js"></script>
+    <script src="js/positions.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/performance.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

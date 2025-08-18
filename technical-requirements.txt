@@ -1,0 +1,57 @@
+Based on the documents provided, here is a summary of the requirements for the algorithmic trading system.
+
+### **System Architecture and Tech Stack**
+
+The system's core is built using Python. It features a secure Web UI, implemented with Flask or FastAPI, for trade approvals, configuration changes, and real-time dashboards. For data storage, PostgreSQL or SQLite is used for transaction logs, historical data, and detailed strategy statistics.
+
+For market integration, the primary platform is the IIFL API for order execution and data. A backup API is also in place for fallback. The system also utilizes the Telegram Bot API for near-real-time alerts, candidate lists, status notifications, and even emergency stop commands. For data analysis and calculations, Pandas, NumPy, and Scikit-learn are essential. Visualization and reporting are handled by libraries like Matplotlib, Plotly, Streamlit, and Dash for live dashboards and analytics, while ReportLab automates the generation of End-of-Day (EOD), weekly, and monthly PDF reports.
+
+For robust deployment, Docker is used to containerize the application, which allows for fast recovery and reproducibility. Cloud hosting, such as AWS EC2, and services like AWS S3 or Google Drive for regular encrypted backups are highly recommended to ensure 24/7 reliability and disaster recovery.
+
+***
+
+### **Market Regime Classification**
+
+The trading logic is designed to adapt to various market regimes, classifying them using a combination of technical indicators.
+
+* **Bullish:** Identified by an ADX > 25, expanding Bollinger Bands, and the 50-period EMA being above the 200-period EMA. This regime calls for a Momentum strategy.
+* **Bearish:** Characterized by an ADX > 25, downward-expanding Bollinger Bands, and the 50-period EMA below the 200-period EMA. A Short Selling strategy is used.
+* **Sideways:** This regime is marked by an ADX < 20, narrow Bollinger Bands, and flat or converging EMAs. A Mean Reversion strategy is employed.
+* **Ambiguous:** Defined by an ADX between 20-25 or conflicting signals. In this case, trading is paused, or low-risk, non-directional strategies are considered.
+
+An enhanced version of the system incorporates a Machine Learning (ML) overlay. Trained ML classifiers weigh technical, fundamental, and sentiment signals to confirm or override traditional logic. They can also use intraday volatility metrics to detect dynamic shifts.
+
+***
+
+### **Trading Strategy Flow and Portfolio Management**
+
+The trading process follows a defined, step-by-step flow. The system first detects the market regime, then screens stocks based on regime-specific filters, including volatility, volume, and liquidity. Position size is calculated using volatility-based sizing and dynamic tail risk metrics. The enhanced system also explicitly models and subtracts transaction costs and slippage from the expected profit/loss before entry.
+
+Trade proposals are sent to the Web UI and Telegram for approval. High-confidence trades can be auto-executed for the Satellite portfolio, while Core migrations require manual approval. Orders are executed via the IIFL API with a fallback to a secondary API. Intraday positions are auto-squared off by market close.
+
+The system manages capital using a Core-Satellite strategy. The Core portfolio holds fundamentally strong, long-term stocks (60-85% of capital). The Satellite portfolio (15-40% of capital) is for high-turnover, short-term trades. Stocks can be promoted from Satellite to Core if they meet a multi-factor score.
+
+***
+
+### **Risk Management and Fail-Safes**
+
+The documents highlight several critical risk mitigation strategies.
+
+* **Market Risk:** Addressed with strict stop-loss, position sizing, and portfolio-wide caps.
+* **Execution Risk:** Managed through health monitoring of APIs, a fallback API, and retry logic.
+* **Liquidity Risk:** Mitigated by including a volume filter in the screening process and modeling slippage.
+* **Technical Risk:** Countered with a combination of Docker, auto-square-off mechanisms, and scheduled backups.
+* **Volatility Spikes:** The system monitors volatility indices like VIX and can throttle or pause all trading activities.
+* **Human Error:** Mitigated by using MFA for critical actions, audit logging, and UI warnings.
+* **Overtrading:** The enhanced system introduces daily trade limits to prevent excessive short-term activity and associated fees.
+* **Emergency Stop:** A key feature that can be activated via the Web UI or a Telegram command. This immediately squares off all open positions and halts the system, requiring a manual, MFA-protected reset to resume.
+
+***
+
+### **Reporting and Monitoring**
+
+The system provides comprehensive reports and continuous monitoring to ensure operational health and transparency.
+
+* **Reports:** EOD, weekly, and monthly reports are generated, detailing trade lists, P/L by trade and regime, latency statistics, and advanced metrics like Sharpe and Sortino ratios.
+* **Monitoring:** The system conducts API health checks at one-minute intervals. It also has drawdown protection that auto-pauses trading if portfolio losses exceed set thresholds.
+* **Fail-Safes:** Latency logging is used to flag slowdowns. The system also performs regular self-tests and mock trades in off-hours to verify robustness.

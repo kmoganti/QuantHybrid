@@ -1,0 +1,3 @@
+"""
+QuantHybrid trading system package
+"""

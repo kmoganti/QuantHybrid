@@ -1,0 +1,974 @@
+versions pytest-8.4.1, python-3.13.3.final.0
+invocation_dir=D:\Trade-App-16Aug25\QuantHybrid
+cwd=D:\Trade-App-16Aug25\QuantHybrid
+args=('tests/test_simple.py', '-vv', '--debug', '--trace')
+
+  pytest_cmdline_main [hook]
+      config: <_pytest.config.Config object at 0x000001FFF58B7620>
+    pytest_plugin_registered [hook]
+        plugin: <Session  exitstatus='<UNSET>' testsfailed=0 testscollected=0>
+        plugin_name: session
+        manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+    finish pytest_plugin_registered --> [] [hook]
+    pytest_configure [hook]
+        config: <_pytest.config.Config object at 0x000001FFF58B7620>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x000001FFF9F50D70>
+          plugin_name: lfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x000001FFF9F51010>
+          plugin_name: nfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: faulthandler [assertion]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          plugin_name: legacypath-tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: pdb [assertion]
+    early skip of rewriting module: cmd [assertion]
+    early skip of rewriting module: code [assertion]
+    early skip of rewriting module: codeop [assertion]
+    early skip of rewriting module: rlcompleter [assertion]
+    early skip of rewriting module: readline [assertion]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.debugging.PdbTrace object at 0x000001FFF9F523C0>
+          plugin_name: pdbtrace
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+          plugin_name: 2198847835504
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x000001FFF58B7620>
+          plugin_name: pytestconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\mark\\__init__.py'>
+          plugin_name: mark
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\main.py'>
+          plugin_name: main
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\runner.py'>
+          plugin_name: runner
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\fixtures.py'>
+          plugin_name: fixtures
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\helpconfig.py'>
+          plugin_name: helpconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\python.py'>
+          plugin_name: python
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\terminal.py'>
+          plugin_name: terminal
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\debugging.py'>
+          plugin_name: debugging
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\unittest.py'>
+          plugin_name: unittest
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\capture.py'>
+          plugin_name: capture
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\skipping.py'>
+          plugin_name: skipping
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.legacypath' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\legacypath.py'>
+          plugin_name: legacypath
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\tmpdir.py'>
+          plugin_name: tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\monkeypatch.py'>
+          plugin_name: monkeypatch
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\recwarn.py'>
+          plugin_name: recwarn
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\pastebin.py'>
+          plugin_name: pastebin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\assertion\\__init__.py'>
+          plugin_name: assertion
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\junitxml.py'>
+          plugin_name: junitxml
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\doctest.py'>
+          plugin_name: doctest
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\cacheprovider.py'>
+          plugin_name: cacheprovider
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.freeze_support' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\freeze_support.py'>
+          plugin_name: freeze_support
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\setuponly.py'>
+          plugin_name: setuponly
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\setupplan.py'>
+          plugin_name: setupplan
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\stepwise.py'>
+          plugin_name: stepwise
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unraisableexception' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\unraisableexception.py'>
+          plugin_name: unraisableexception
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.threadexception' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\threadexception.py'>
+          plugin_name: threadexception
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\warnings.py'>
+          plugin_name: warnings
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\logging.py'>
+          plugin_name: logging
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\reports.py'>
+          plugin_name: reports
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\faulthandler.py'>
+          plugin_name: faulthandler
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'anyio.pytest_plugin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\anyio\\pytest_plugin.py'>
+          plugin_name: anyio
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'dash.testing.plugin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\dash\\testing\\plugin.py'>
+          plugin_name: dash
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_asyncio.plugin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py'>
+          plugin_name: asyncio
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_cov.plugin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\pytest_cov\\plugin.py'>
+          plugin_name: pytest_cov
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=8 _state='suspended' tmpfile=<EncodedFile name='<tempfile._TemporaryFileWrapper object at 0x000001FFF9F50830>' mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=10 _state='suspended' tmpfile=<EncodedFile name='<tempfile._TemporaryFileWrapper object at 0x000001FFF9EBD450>' mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=6 _state='started' tmpfile=<_io.TextIOWrapper name='nul' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+          plugin_name: capturemanager
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'QuantHybrid.tests.conftest' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\tests\\conftest.py'>
+          plugin_name: D:\Trade-App-16Aug25\QuantHybrid\tests\conftest.py
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          plugin_name: session
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x000001FFF9F50D70>
+          plugin_name: lfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x000001FFF9F51010>
+          plugin_name: nfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          plugin_name: legacypath-tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.debugging.PdbTrace object at 0x000001FFF9F523C0>
+          plugin_name: pdbtrace
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x000001FFF9F52510>
+          plugin_name: terminalreporter
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x000001FFF9F52E40>
+          plugin_name: logging-plugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+    finish pytest_configure --> [] [hook]
+    pytest_sessionstart [hook]
+        session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+          plugin_name: 2198847835504
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x000001FFF58B7620>
+          plugin_name: pytestconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\mark\\__init__.py'>
+          plugin_name: mark
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\main.py'>
+          plugin_name: main
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\runner.py'>
+          plugin_name: runner
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\fixtures.py'>
+          plugin_name: fixtures
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\helpconfig.py'>
+          plugin_name: helpconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\python.py'>
+          plugin_name: python
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\terminal.py'>
+          plugin_name: terminal
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\debugging.py'>
+          plugin_name: debugging
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\unittest.py'>
+          plugin_name: unittest
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\capture.py'>
+          plugin_name: capture
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\skipping.py'>
+          plugin_name: skipping
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.legacypath' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\legacypath.py'>
+          plugin_name: legacypath
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\tmpdir.py'>
+          plugin_name: tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\monkeypatch.py'>
+          plugin_name: monkeypatch
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\recwarn.py'>
+          plugin_name: recwarn
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\pastebin.py'>
+          plugin_name: pastebin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\assertion\\__init__.py'>
+          plugin_name: assertion
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\junitxml.py'>
+          plugin_name: junitxml
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\doctest.py'>
+          plugin_name: doctest
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\cacheprovider.py'>
+          plugin_name: cacheprovider
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.freeze_support' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\freeze_support.py'>
+          plugin_name: freeze_support
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\setuponly.py'>
+          plugin_name: setuponly
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\setupplan.py'>
+          plugin_name: setupplan
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\stepwise.py'>
+          plugin_name: stepwise
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unraisableexception' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\unraisableexception.py'>
+          plugin_name: unraisableexception
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.threadexception' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\threadexception.py'>
+          plugin_name: threadexception
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\warnings.py'>
+          plugin_name: warnings
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\logging.py'>
+          plugin_name: logging
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\reports.py'>
+          plugin_name: reports
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\_pytest\\faulthandler.py'>
+          plugin_name: faulthandler
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'anyio.pytest_plugin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\anyio\\pytest_plugin.py'>
+          plugin_name: anyio
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'dash.testing.plugin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\dash\\testing\\plugin.py'>
+          plugin_name: dash
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_asyncio.plugin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py'>
+          plugin_name: asyncio
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_cov.plugin' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\pytest_cov\\plugin.py'>
+          plugin_name: pytest_cov
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=8 _state='suspended' tmpfile=<EncodedFile name='<tempfile._TemporaryFileWrapper object at 0x000001FFF9F50830>' mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=10 _state='suspended' tmpfile=<EncodedFile name='<tempfile._TemporaryFileWrapper object at 0x000001FFF9EBD450>' mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=6 _state='started' tmpfile=<_io.TextIOWrapper name='nul' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+          plugin_name: capturemanager
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'QuantHybrid.tests.conftest' from 'D:\\Trade-App-16Aug25\\QuantHybrid\\tests\\conftest.py'>
+          plugin_name: D:\Trade-App-16Aug25\QuantHybrid\tests\conftest.py
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          plugin_name: session
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x000001FFF9F50D70>
+          plugin_name: lfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x000001FFF9F51010>
+          plugin_name: nfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          plugin_name: legacypath-tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.debugging.PdbTrace object at 0x000001FFF9F523C0>
+          plugin_name: pdbtrace
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x000001FFF9F52510>
+          plugin_name: terminalreporter
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x000001FFF9F52E40>
+          plugin_name: logging-plugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.fixtures.FixtureManager object at 0x000001FFF9F53620>
+          plugin_name: funcmanage
+          manager: <_pytest.config.PytestPluginManager object at 0x000001FFF58B4D70>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_report_header [hook]
+          config: <_pytest.config.Config object at 0x000001FFF58B7620>
+          start_path: D:\Trade-App-16Aug25\QuantHybrid
+          startdir: D:\Trade-App-16Aug25\QuantHybrid
+      finish pytest_report_header --> [['asyncio: mode=Mode.AUTO, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function'], ['rootdir: D:\\Trade-App-16Aug25\\QuantHybrid', 'configfile: pytest.ini', 'plugins: anyio-4.10.0, dash-3.2.0, asyncio-1.1.0, cov-6.2.1'], 'cachedir: .pytest_cache', ['using: pytest-8.4.1', 'registered third-party plugins:', '  anyio-4.10.0 at D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\anyio\\pytest_plugin.py', '  dash-3.2.0 at D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\dash\\testing\\plugin.py', '  pytest-asyncio-1.1.0 at D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py', '  pytest-cov-6.2.1 at D:\\Trade-App-16Aug25\\QuantHybrid\\.venv\\Lib\\site-packages\\pytest_cov\\plugin.py']] [hook]
+    finish pytest_sessionstart --> [] [hook]
+    pytest_collection [hook]
+        session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+    perform_collect <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0> ['tests/test_simple.py'] [collection]
+        pytest_collectstart [hook]
+            collector: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        finish pytest_collectstart --> [] [hook]
+        pytest_make_collect_report [hook]
+            collector: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        processing argument CollectionArgument(path=WindowsPath('D:/Trade-App-16Aug25/QuantHybrid/tests/test_simple.py'), parts=[], module_name=None) [collection]
+            pytest_collect_directory [hook]
+                path: D:\Trade-App-16Aug25\QuantHybrid
+                parent: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_directory --> <Package QuantHybrid> [hook]
+            pytest_collectstart [hook]
+                collector: <Package QuantHybrid>
+            finish pytest_collectstart --> [] [hook]
+            pytest_make_collect_report [hook]
+                collector: <Package QuantHybrid>
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\__init__.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\__init__.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package QuantHybrid>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\__init__.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\__init__.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\.env
+                  path: D:\Trade-App-16Aug25\QuantHybrid\.env
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package QuantHybrid>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\.env
+                  path: D:\Trade-App-16Aug25\QuantHybrid\.env
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\.github
+                  path: D:\Trade-App-16Aug25\QuantHybrid\.github
+              finish pytest_ignore_collect --> True [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\.pytest_cache
+                  path: D:\Trade-App-16Aug25\QuantHybrid\.pytest_cache
+              finish pytest_ignore_collect --> True [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\.venv
+                  path: D:\Trade-App-16Aug25\QuantHybrid\.venv
+              finish pytest_ignore_collect --> True [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\README.md
+                  path: D:\Trade-App-16Aug25\QuantHybrid\README.md
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package QuantHybrid>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\README.md
+                  path: D:\Trade-App-16Aug25\QuantHybrid\README.md
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\__pycache__
+                  path: D:\Trade-App-16Aug25\QuantHybrid\__pycache__
+              finish pytest_ignore_collect --> True [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\config
+                  path: D:\Trade-App-16Aug25\QuantHybrid\config
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\config
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir config> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\core
+                  path: D:\Trade-App-16Aug25\QuantHybrid\core
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\core
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir core> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\data
+                  path: D:\Trade-App-16Aug25\QuantHybrid\data
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\data
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir data> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\database
+                  path: D:\Trade-App-16Aug25\QuantHybrid\database
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\database
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir database> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\docs
+                  path: D:\Trade-App-16Aug25\QuantHybrid\docs
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\docs
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir docs> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\execution
+                  path: D:\Trade-App-16Aug25\QuantHybrid\execution
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\execution
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir execution> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\logs
+                  path: D:\Trade-App-16Aug25\QuantHybrid\logs
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\logs
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir logs> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\main.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\main.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package QuantHybrid>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\main.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\main.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\monitoring
+                  path: D:\Trade-App-16Aug25\QuantHybrid\monitoring
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\monitoring
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir monitoring> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\notifications
+                  path: D:\Trade-App-16Aug25\QuantHybrid\notifications
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\notifications
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir notifications> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\pytest.ini
+                  path: D:\Trade-App-16Aug25\QuantHybrid\pytest.ini
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package QuantHybrid>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\pytest.ini
+                  path: D:\Trade-App-16Aug25\QuantHybrid\pytest.ini
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\pytestdebug.log
+                  path: D:\Trade-App-16Aug25\QuantHybrid\pytestdebug.log
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package QuantHybrid>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\pytestdebug.log
+                  path: D:\Trade-App-16Aug25\QuantHybrid\pytestdebug.log
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\requirements.txt
+                  path: D:\Trade-App-16Aug25\QuantHybrid\requirements.txt
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package QuantHybrid>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\requirements.txt
+                  path: D:\Trade-App-16Aug25\QuantHybrid\requirements.txt
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\risk_management
+                  path: D:\Trade-App-16Aug25\QuantHybrid\risk_management
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\risk_management
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir risk_management> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\strategies
+                  path: D:\Trade-App-16Aug25\QuantHybrid\strategies
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\strategies
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Package strategies> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\test_requirements.txt
+                  path: D:\Trade-App-16Aug25\QuantHybrid\test_requirements.txt
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package QuantHybrid>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\test_requirements.txt
+                  path: D:\Trade-App-16Aug25\QuantHybrid\test_requirements.txt
+              finish pytest_collect_file --> [<DoctestTextfile test_requirements.txt>] [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Package tests> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\utils
+                  path: D:\Trade-App-16Aug25\QuantHybrid\utils
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\utils
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir utils> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\web_interface
+                  path: D:\Trade-App-16Aug25\QuantHybrid\web_interface
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\web_interface
+                  parent: <Package QuantHybrid>
+              finish pytest_collect_directory --> <Dir web_interface> [hook]
+            finish pytest_make_collect_report --> <CollectReport '.' lenresult=15 outcome='passed'> [hook]
+            pytest_collectstart [hook]
+                collector: <Package tests>
+            finish pytest_collectstart --> [] [hook]
+            pytest_make_collect_report [hook]
+                collector: <Package tests>
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\__init__.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\__init__.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\__init__.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\__init__.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\__pycache__
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\__pycache__
+              finish pytest_ignore_collect --> True [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\base_test.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\base_test.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\base_test.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\base_test.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\conftest.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\conftest.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\conftest.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\conftest.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\mocks
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\mocks
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\mocks
+                  parent: <Package tests>
+              finish pytest_collect_directory --> <Dir mocks> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_backtesting.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_backtesting.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_backtesting.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_backtesting.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_backtesting.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_backtesting.py
+                finish pytest_pycollect_makemodule --> <Module test_backtesting.py> [hook]
+              finish pytest_collect_file --> [<Module test_backtesting.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_config.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_config.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_config.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_config.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_config.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_config.py
+                finish pytest_pycollect_makemodule --> <Module test_config.py> [hook]
+              finish pytest_collect_file --> [<Module test_config.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_database.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_database.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_database.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_database.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_database.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_database.py
+                finish pytest_pycollect_makemodule --> <Module test_database.py> [hook]
+              finish pytest_collect_file --> [<Module test_database.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_debug.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_debug.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_debug.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_debug.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_debug.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_debug.py
+                finish pytest_pycollect_makemodule --> <Module test_debug.py> [hook]
+              finish pytest_collect_file --> [<Module test_debug.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_execution.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_execution.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_execution.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_execution.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_execution.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_execution.py
+                finish pytest_pycollect_makemodule --> <Module test_execution.py> [hook]
+              finish pytest_collect_file --> [<Module test_execution.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_integration.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_integration.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_integration.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_integration.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_integration.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_integration.py
+                finish pytest_pycollect_makemodule --> <Module test_integration.py> [hook]
+              finish pytest_collect_file --> [<Module test_integration.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_market_data.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_market_data.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_market_data.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_market_data.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_market_data.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_market_data.py
+                finish pytest_pycollect_makemodule --> <Module test_market_data.py> [hook]
+              finish pytest_collect_file --> [<Module test_market_data.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_monitoring.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_monitoring.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_monitoring.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_monitoring.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_monitoring.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_monitoring.py
+                finish pytest_pycollect_makemodule --> <Module test_monitoring.py> [hook]
+              finish pytest_collect_file --> [<Module test_monitoring.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_performance.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_performance.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_performance.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_performance.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_performance.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_performance.py
+                finish pytest_pycollect_makemodule --> <Module test_performance.py> [hook]
+              finish pytest_collect_file --> [<Module test_performance.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_risk_manager.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_risk_manager.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_risk_manager.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_risk_manager.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_risk_manager.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_risk_manager.py
+                finish pytest_pycollect_makemodule --> <Module test_risk_manager.py> [hook]
+              finish pytest_collect_file --> [<Module test_risk_manager.py>] [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_simple.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_simple.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_simple.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_simple.py
+                finish pytest_pycollect_makemodule --> <Module test_simple.py> [hook]
+              finish pytest_collect_file --> [<Module test_simple.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_strategy.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_strategy.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_strategy.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_strategy.py
+                pytest_pycollect_makemodule [hook]
+                    parent: <Package tests>
+                    module_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_strategy.py
+                    path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_strategy.py
+                finish pytest_pycollect_makemodule --> <Module test_strategy.py> [hook]
+              finish pytest_collect_file --> [<Module test_strategy.py>] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x000001FFF58B7620>
+                  collection_path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_web_interface.py
+                  path: D:\Trade-App-16Aug25\QuantHybrid\tests\test_web_interface.py
+              finish pytest_ignore_collect --> None [hook]

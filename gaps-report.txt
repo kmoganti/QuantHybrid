@@ -1,0 +1,127 @@
+Gaps Report for QuantHybrid (based on technical-requirements.txt and code scan)
+
+1) Configuration and Settings
+- File(s): config/settings.py, config/logging_config.py
+- Issue:
+  - DATABASE_URL uses sync driver (sqlite:///), but DB manager uses async engine.
+  - Only class attributes exist; code imports module-level constants (LOG_DIR, LOG_LEVEL, etc.).
+- Impact: Import/connection errors at runtime.
+- Fix:
+  - Use async URL: sqlite+aiosqlite:///data/quanthybrid.db (or switch to sync manager).
+  - Create `settings = Settings()` and expose module-level aliases for LOG_DIR, LOG_LEVEL, LOG_FORMAT, DATABASE_URL, etc.
+
+2) Web API/Auth and App Wiring
+- File(s): web_interface/api.py, main.py
+- Issue:
+  - Uses undefined WEB_INTERFACE_SETTINGS for secrets/expiry/admin creds.
+  - JWT exception handling likely incorrect; wrong exception class.
+  - Separate FastAPI app not mounted in main.py.
+- Impact: NameError/401 handling bugs; routes not served by main app.
+- Fix:
+  - Use `from config.settings import settings` for secret, expiry, admin creds.
+  - Catch jwt.exceptions.InvalidTokenError (PyJWT) when decoding.
+  - Import and mount the API app/router into main.py or consolidate.
+
+3) Database Manager and API Methods
+- File(s): database/database_manager.py, web_interface/api.py
+- Issue:
+  - API calls non-existent DB methods: get_latest_system_metrics, get_all_strategies, create_strategy, update_strategy, get_open_positions, get_orders, get_performance_metrics, get_latest_market_data.
+- Impact: 500 errors on API endpoints.
+- Fix:
+  - Implement minimal versions of these methods or adjust endpoints accordingly.
+
+4) Models
+- File(s): database/models.py
+- Issue:
+  - Missing Strategy, Account (and Portfolio/Core-Satellite tracking) models.
+- Impact: Strategy CRUD and portfolio management can’t be implemented.
+- Fix:
+  - Add Strategy and Account models; consider fields for capital allocation and status.
+
+5) Market Data Interface Mismatches
+- File(s): core/market_data/market_data_manager.py, strategies/ma_crossover.py
+- Issue:
+  - get_historical_data signature differs (expects exchange+days vs strategy passing start/end/interval).
+  - get_last_price requires (exchange, instrument_id) but strategy uses single-arg call.
+- Impact: Runtime errors in strategies.
+- Fix:
+  - Add wrapper methods supporting both patterns or update strategies to pass exchange and correct params.
+
+6) Strategies
+- File(s): strategies/base_strategy.py, strategies/ma_crossover.py
+- Issue:
+  - RiskManager type hint used without import.
+  - Uses order_manager.get_todays_trades() which doesn’t exist.
+  - Regime detection doesn’t implement full ADX + Bollinger Bands + EMA(50/200) logic required; REGIME thresholds unused.
+- Impact: NameErrors/AttributeErrors; partial requirement coverage.
+- Fix:
+  - Import RiskManager from risk_management.risk_manager or quote the annotation.
+  - Implement get_todays_trades in OrderManager.
+  - Add a regime classifier with ADX/BB/EMA50/200 and use thresholds from settings.
+
+7) Risk Management
+- File(s): risk_management/risk_manager.py, config/risk_settings.py
+- Issue:
+  - Imports RISK_LIMITS from config.settings (not present); key names/units likely differ from risk_settings.
+  - Volatility thresholds compared to ATR/close ratio without unit normalization.
+- Impact: ImportError; mis-triggered risk rules.
+- Fix:
+  - Import RISK_LIMITS from config.risk_settings and align key names/units.
+  - Normalize volatility metric and thresholds (percent vs ratio).
+
+8) Safety Monitor
+- File(s): monitoring/safety_monitor.py, utils/trading_state.py
+- Issue:
+  - Uses RISK_LIMITS without import; calls TradingState methods not implemented: set_warning, clear_warning, get_warnings, set_position_size_factor, set_trading_mode, set_cooldown, set_emergency_stop.
+- Impact: NameError/AttributeError during monitoring.
+- Fix:
+  - Import RISK_LIMITS where referenced.
+  - Add above methods to TradingState.
+
+9) Notifications
+- File(s): notifications/notification_manager.py, config/settings.py
+- Issue:
+  - Imports NOTIFICATION_SETTINGS which is not defined in settings.
+  - Telegram library async usage may not match installed version.
+- Impact: Notification service fails to start or send messages.
+- Fix:
+  - Define NOTIFICATION_SETTINGS in settings.py or refactor to use settings.TELEGRAM_* and email envs.
+  - Verify and adjust Telegram client usage for installed version.
+
+10) Execution/Order Manager
+- File(s): execution/order_manager.py
+- Issue:
+  - Imports CIRCUIT_BREAKER but doesn’t enforce any throttle/size restrictions.
+  - Missing get_todays_trades() wrapper.
+- Impact: Requirement for throttling not enforced; strategies can’t fetch trades.
+- Fix:
+  - Integrate breaker state into order validation/sizing.
+  - Implement get_todays_trades via client.get_trade_book().
+
+11) App Startup Wiring
+- File(s): main.py
+- Issue:
+  - Only initializes DB; doesn’t start MarketDataManager, OrderManager, SafetyMonitor, Notification service, or mount web_interface API.
+- Impact: System not operational end-to-end.
+- Fix:
+  - Initialize and wire components on startup; graceful shutdown handlers; mount API.
+
+12) Missing Requirement Features (not implemented yet)
+- Core/Satellite portfolio allocation + promotion rules.
+- Approval workflow (Web UI/Telegram) with MFA for critical actions.
+- Auto square-off before market close.
+- Fallback broker/API abstraction.
+- Reporting: EOD/weekly/monthly PDFs (Sharpe/Sortino/latency) with ReportLab.
+- Dockerfile/docker-compose and periodic encrypted cloud backups.
+- API health checks and latency capture integrated with SafetyMonitor.
+- Off-hours self-tests and mock trades.
+
+Suggested Minimal Fix Order
+1) Settings: async DB URL + expose settings instance and aliases; fix logging imports.
+2) Web API: replace WEB_INTERFACE_SETTINGS with settings; fix JWT exceptions; mount API in main.
+3) TradingState: add warning/mode/cooldown/emergency methods; import RISK_LIMITS in SafetyMonitor.
+4) MarketData/Strategy: align method signatures for historical and last price.
+5) RiskManager: import from config.risk_settings; normalize thresholds/units.
+6) DB Manager: implement API-used methods; add Strategy/Account models.
+7) OrderManager: add get_todays_trades and optional breaker enforcement.
+8) Then iterate on approval workflow, portfolio logic, reporting, deployment.
