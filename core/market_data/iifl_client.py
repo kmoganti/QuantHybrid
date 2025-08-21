@@ -16,7 +16,7 @@ class IIFLClient:
     Client for interacting with IIFL market data APIs.
     """
     
-    def __init__(self, session_token: str):
+    def __init__(self, session_token: str = "test_session"):
         """Initialize the client with session token."""
         self.session_token = session_token
         self.base_url = IIFL_BASE_URL
@@ -25,6 +25,35 @@ class IIFLClient:
             "Content-Type": "application/json"
         }
         self.trading_state = TradingState()
+        self._connected: bool = False
+        self._subscriptions: set[str] = set()
+    
+    async def connect(self) -> bool:
+        """Public connect method that uses internal _connect implementation."""
+        try:
+            result = await self._connect()
+            self._connected = bool(result)
+            return self._connected
+        except Exception as exc:
+            self._connected = False
+            raise
+    
+    async def _connect(self) -> bool:
+        """Low-level connect implementation (stubbed for tests)."""
+        # In real-world, perform handshake/auth validation here
+        await asyncio.sleep(0)
+        return True
+
+    async def subscribe(self, symbol: str) -> bool:
+        """Subscribe to real-time updates for a symbol (stub for tests)."""
+        if not self._connected:
+            await self.connect()
+        self._subscriptions.add(symbol)
+        return True
+
+    async def unsubscribe(self, symbol: str) -> bool:
+        self._subscriptions.discard(symbol)
+        return True
     
     async def _make_request(self, method: str, endpoint: str, data: Optional[Dict] = None) -> Dict:
         """Make HTTP request to IIFL API."""

@@ -70,7 +70,7 @@ class OrderManager:
                 quantity=order_params['quantity'],
                 price=order_params.get('price'),
                 trigger_price=order_params.get('slTriggerPrice'),
-                status=OrderStatus.PLACED,
+                status=OrderStatus.PLACED.value,
                 strategy=order_params.get('orderTag', 'UNKNOWN'),
                 portfolio_type=order_params.get('portfolio_type', 'SATELLITE')
             )
@@ -98,10 +98,10 @@ class OrderManager:
             await self.client.modify_order(broker_order_id, modify_params)
             
             # Update order record
-            order = await self.db_manager.get_items(Order, broker_order_id=broker_order_id)
-            if order:
-                order = order[0]
-                order.status = OrderStatus.MODIFIED
+            order_list = await self.db_manager.get_items(Order, broker_order_id=broker_order_id)
+            if order_list:
+                order = order_list[0]
+                order.status = OrderStatus.MODIFIED.value
                 await self.db_manager.update_item(order)
             
             return True
@@ -116,10 +116,10 @@ class OrderManager:
             await self.client.cancel_order(broker_order_id)
             
             # Update order record
-            order = await self.db_manager.get_items(Order, broker_order_id=broker_order_id)
-            if order:
-                order = order[0]
-                order.status = OrderStatus.CANCELLED
+            order_list = await self.db_manager.get_items(Order, broker_order_id=broker_order_id)
+            if order_list:
+                order = order_list[0]
+                order.status = OrderStatus.CANCELLED.value
                 await self.db_manager.update_item(order)
             
             # Remove from pending orders
@@ -162,8 +162,8 @@ class OrderManager:
             order = self.pending_orders[broker_order_id]
             new_status = OrderStatus(order_data['orderStatus'].lower())
             
-            if new_status != order.status:
-                order.status = new_status
+            if new_status.value != order.status:
+                order.status = new_status.value
                 await self.db_manager.update_item(order)
                 
                 if new_status == OrderStatus.EXECUTED:
@@ -182,7 +182,7 @@ class OrderManager:
                     # Remove from pending orders
                     self.pending_orders.pop(broker_order_id)
                     
-                logger.info(f"Order {broker_order_id} status updated to {new_status}")
+                logger.info(f"Order {broker_order_id} status updated to {new_status.value}")
                 
         except Exception as e:
             logger.error(f"Error updating order status: {str(e)}")
