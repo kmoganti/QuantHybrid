@@ -28,6 +28,12 @@ class DatabaseManager:
             db_url = "sqlite+aiosqlite:///:memory:"
         else:
             db_url = DATABASE_URL
+
+        # Ensure async driver is used
+        if db_url.startswith("sqlite:///"):
+            db_url = db_url.replace("sqlite:///", "sqlite+aiosqlite:///", 1)
+        if db_url.startswith("postgresql://"):
+            db_url = db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
             
         self.engine = create_async_engine(
             db_url,
@@ -127,10 +133,8 @@ class DatabaseManager:
             logger.error(f"Failed to delete item: {str(e)}")
             return False
 
-# Create global database manager instance
-db_manager = DatabaseManager()
-
 # Initialization function to be called at startup
 async def init_db():
-    """Initialize the database."""
-    await db_manager.init_db()
+    """Initialize the database using a temporary manager."""
+    temp_manager = DatabaseManager()
+    await temp_manager.init_db()

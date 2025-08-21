@@ -11,7 +11,7 @@ from utils.trading_state import TradingState
 
 logger = get_logger('api')
 
-class IIFLMarketDataClient:
+class IIFLClient:
     """
     Client for interacting with IIFL market data APIs.
     """

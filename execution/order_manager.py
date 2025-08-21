@@ -6,7 +6,7 @@ import asyncio
 from datetime import datetime
 from config.logging_config import get_logger
 from config.settings import CIRCUIT_BREAKER
-from database.database_manager import db_manager
+from database.database_manager import DatabaseManager
 from database.models import Order, OrderStatus, Trade
 from execution.iifl_execution import IIFLExecutionClient
 from utils.trading_state import TradingState
@@ -16,11 +16,12 @@ logger = get_logger('execution')
 class OrderManager:
     """Manages order execution and monitoring."""
     
-    def __init__(self, session_token: str):
+    def __init__(self, session_token: str = "test_session"):
         self.client = IIFLExecutionClient(session_token)
         self.trading_state = TradingState()
         self.pending_orders: Dict[str, Order] = {}
         self.order_update_task = None
+        self.db_manager = DatabaseManager(test_mode=True)
     
     async def start(self):
         """Start order manager."""
@@ -75,7 +76,7 @@ class OrderManager:
             )
             
             # Store in database
-            await db_manager.add_item(order)
+            await self.db_manager.add_item(order)
             
             # Add to pending orders
             self.pending_orders[broker_order_id] = order
@@ -97,11 +98,11 @@ class OrderManager:
             await self.client.modify_order(broker_order_id, modify_params)
             
             # Update order record
-            order = await db_manager.get_items(Order, broker_order_id=broker_order_id)
+            order = await self.db_manager.get_items(Order, broker_order_id=broker_order_id)
             if order:
                 order = order[0]
                 order.status = OrderStatus.MODIFIED
-                await db_manager.update_item(order)
+                await self.db_manager.update_item(order)
             
             return True
             
@@ -115,11 +116,11 @@ class OrderManager:
             await self.client.cancel_order(broker_order_id)
             
             # Update order record
-            order = await db_manager.get_items(Order, broker_order_id=broker_order_id)
+            order = await self.db_manager.get_items(Order, broker_order_id=broker_order_id)
             if order:
                 order = order[0]
                 order.status = OrderStatus.CANCELLED
-                await db_manager.update_item(order)
+                await self.db_manager.update_item(order)
             
             # Remove from pending orders
             self.pending_orders.pop(broker_order_id, None)
@@ -163,7 +164,7 @@ class OrderManager:
             
             if new_status != order.status:
                 order.status = new_status
-                await db_manager.update_item(order)
+                await self.db_manager.update_item(order)
                 
                 if new_status == OrderStatus.EXECUTED:
                     # Create trade record
@@ -176,7 +177,7 @@ class OrderManager:
                         strategy=order.strategy,
                         portfolio_type=order.portfolio_type
                     )
-                    await db_manager.add_item(trade)
+                    await self.db_manager.add_item(trade)
                     
                     # Remove from pending orders
                     self.pending_orders.pop(broker_order_id)

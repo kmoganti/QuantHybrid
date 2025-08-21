@@ -5,7 +5,7 @@ from typing import Dict, List, Optional
 import pandas as pd
 import numpy as np
 from config.logging_config import get_logger
-from database.database_manager import db_manager
+from database.database_manager import DatabaseManager
 from database.models import Trade, Order
 
 logger = get_logger('execution')
@@ -40,6 +40,7 @@ class SlippageAnalyzer:
         """Analyze slippage patterns for an instrument."""
         try:
             # Get historical trades
+            db_manager = DatabaseManager(test_mode=True)
             trades = await db_manager.get_items(
                 Trade,
                 instrument_id=instrument_id

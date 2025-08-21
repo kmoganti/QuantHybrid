@@ -13,6 +13,7 @@ from database.models import MarketRegime, Order
 from core.market_data.market_data_manager import MarketDataManager
 from execution.order_manager import OrderManager
 from utils.trading_state import TradingState
+from risk_management.risk_manager import RiskManager
 
 logger = get_logger('strategy')
 
