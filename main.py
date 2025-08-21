@@ -6,9 +6,11 @@ from fastapi import FastAPI
 from config.logging_config import get_logger
 from utils.trading_state import TradingState
 from database.database_manager import init_db
+from web_interface.api import app as api_app
 
-# Initialize FastAPI app
+# Initialize FastAPI app and mount API
 app = FastAPI(title="QuantHybrid Trading System")
+app.mount("/", api_app)
 
 # Get logger
 logger = get_logger('system')

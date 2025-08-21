@@ -238,6 +238,11 @@ class NotificationManager:
             await self._send_high_priority_notification(alert.get('message', ''))
         else:
             await self._send_normal_notification(alert.get('message', ''))
+        # track for throttling window
+        import time
+        t = time.time()
+        timestamps = self._sent_timestamps.setdefault(alert.get('type', 'GENERIC'), [])
+        timestamps.append(t)
 
     async def send_email_alert(self, alert: Dict):
         await self._send_email(subject=f"{alert.get('type', 'ALERT')} - {alert.get('severity', '')}", message=alert.get('message', ''))
