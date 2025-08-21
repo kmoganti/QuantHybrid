@@ -100,3 +100,13 @@ class TradingState:
             'component_status': self._component_status.copy(),
             'strategy_status': self._strategy_status.copy()
         }
+
+    def reset(self) -> None:
+        """Reset trading state to defaults for tests."""
+        with self._lock:
+            self._trading_enabled = False
+            self._emergency_stop = False
+            for key in list(self._component_status.keys()):
+                self._component_status[key] = False
+            self._strategy_status.clear()
+            logger.info("Trading state reset")

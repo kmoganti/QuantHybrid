@@ -22,3 +22,7 @@ black>=21.9b0
 flake8>=3.9.2
 mypy>=0.910
 pytest-asyncio>=0.15.1
+
+# Missing runtime deps for settings and JWT used in tests/web interface
+pydantic-settings>=2.6.0
+PyJWT>=2.8.0

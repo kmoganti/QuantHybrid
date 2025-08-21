@@ -105,3 +105,28 @@ class SystemMetrics(Base):
     memory_usage = Column(Float)
     error_count = Column(Integer)
     warning_count = Column(Integer)
+
+# Additional models required by tests
+from sqlalchemy.types import JSON
+
+class Strategy(Base):
+    """Model for trading strategies.
+    Provides minimal fields required by tests: name, parameters (JSON), status, and capital allocation.
+    """
+    __tablename__ = 'strategies'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String, unique=True, nullable=False)
+    parameters = Column(JSON, default={})
+    status = Column(String, default='INACTIVE')
+    capital_allocated = Column(Float, default=0.0)
+
+class Account(Base):
+    """Model for account summary metrics used by web interface and tests."""
+    __tablename__ = 'accounts'
+
+    id = Column(Integer, primary_key=True)
+    balance = Column(Float, default=0.0)
+    equity = Column(Float, default=0.0)
+    margin_used = Column(Float, default=0.0)
+    free_margin = Column(Float, default=0.0)

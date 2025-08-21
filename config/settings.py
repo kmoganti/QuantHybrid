@@ -25,7 +25,7 @@ class Settings(BaseSettings):
         self.LOG_DIR.mkdir(exist_ok=True)
     
     # Database
-    DATABASE_URL: str = "sqlite:///data/quanthybrid.db"
+    DATABASE_URL: str = "sqlite+aiosqlite:///data/quanthybrid.db"
     
     # API Settings
     # API Settings
@@ -83,12 +83,49 @@ class Settings(BaseSettings):
     LOG_LEVEL: str = "INFO"
     LOG_FORMAT: str = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     
+    # Web Interface
+    WEB_INTERFACE_SETTINGS: Dict[str, Any] = {
+        "secret_key": os.getenv("WEB_SECRET_KEY", "test_secret_key"),
+        "admin_username": os.getenv("WEB_ADMIN_USERNAME", "admin"),
+        "admin_password": os.getenv("WEB_ADMIN_PASSWORD", "admin"),
+        "access_token_expire_minutes": int(os.getenv("WEB_TOKEN_EXPIRE_MINUTES", "60"))
+    }
+    
     # Circuit Breaker Settings
     CIRCUIT_BREAKER: Dict[str, Any] = {
         "max_drawdown": 0.05,  # 5% max drawdown
         "volatility_threshold": 2.5,  # 2.5x normal volatility
         "max_trades_per_day": 50,
         "max_positions": 10
+    }
+    
+    # Risk limits used by risk manager
+    RISK_LIMITS: Dict[str, Any] = {
+        "max_position_size": 1000,
+        "min_position_size": 1,
+        "max_daily_loss": 100000.0,
+        "max_drawdown": 0.20,
+        "max_total_exposure": 10_000_000.0,
+        "high_volatility_threshold": 2.5,
+        "medium_volatility_threshold": 1.5,
+        "max_volatility": 5.0,
+        "min_trend_strength": 0.1,
+        "volatility_base": 1.0,
+        "max_capital_per_trade": 100_000.0
+    }
+    
+    # Notification settings
+    NOTIFICATION_SETTINGS: Dict[str, Any] = {
+        "telegram_enabled": os.getenv("TELEGRAM_ENABLED", "false").lower() == "true",
+        "telegram_token": os.getenv("TELEGRAM_BOT_TOKEN"),
+        "telegram_chat_id": os.getenv("TELEGRAM_CHAT_ID"),
+        "email_enabled": os.getenv("EMAIL_ENABLED", "false").lower() == "true",
+        "email_high_priority": os.getenv("EMAIL_HIGH_PRIORITY", "false").lower() == "true",
+        "smtp_server": os.getenv("SMTP_SERVER", "smtp.example.com"),
+        "smtp_port": int(os.getenv("SMTP_PORT", "465")),
+        "smtp_username": os.getenv("SMTP_USERNAME", "noreply@example.com"),
+        "smtp_password": os.getenv("SMTP_PASSWORD", "password"),
+        "notification_email": os.getenv("NOTIFICATION_EMAIL", "alerts@example.com")
     }
     
     # Telegram Settings
@@ -118,6 +155,28 @@ class Settings(BaseSettings):
         
     @validator('DATABASE_URL')
     def validate_database_url(cls, v: str) -> str:
-        if not v.startswith('sqlite:///') and not v.startswith('postgresql://'):
+        allowed_prefixes = (
+            'sqlite:///',
+            'sqlite+aiosqlite://',
+            'postgresql://',
+            'postgresql+asyncpg://'
+        )
+        if not v.startswith(allowed_prefixes):
             raise ValueError('Invalid database URL')
         return v
+
+# Expose commonly used module-level constants for convenience in tests and other modules
+_settings_instance = Settings()
+
+# Expose convenience, module-level constants for legacy imports
+TRADING_HOURS = _settings_instance.TRADING_HOURS
+ML_SETTINGS = _settings_instance.ML_SETTINGS
+CIRCUIT_BREAKER = _settings_instance.CIRCUIT_BREAKER
+DATABASE_URL = _settings_instance.DATABASE_URL
+LOG_LEVEL = _settings_instance.LOG_LEVEL
+LOG_FORMAT = _settings_instance.LOG_FORMAT
+LOG_DIR = _settings_instance.LOG_DIR
+IIFL_BASE_URL = _settings_instance.IIFL_BASE_URL
+WEB_INTERFACE_SETTINGS = _settings_instance.WEB_INTERFACE_SETTINGS
+RISK_LIMITS = _settings_instance.RISK_LIMITS
+NOTIFICATION_SETTINGS = _settings_instance.NOTIFICATION_SETTINGS

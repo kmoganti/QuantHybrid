@@ -1,0 +1,18 @@
+{"timestamp": "2025-08-21 05:30:14,748", "name": "system", "level": "INFO", "message": "Trading state manager initialized", "module": "trading_state", "line": 41}
+{"timestamp": "2025-08-21 05:32:27,352", "name": "system", "level": "INFO", "message": "Trading state manager initialized", "module": "trading_state", "line": 41}
+{"timestamp": "2025-08-21 05:33:13,898", "name": "system", "level": "INFO", "message": "Trading state manager initialized", "module": "trading_state", "line": 41}
+{"timestamp": "2025-08-21 05:33:20,393", "name": "system", "level": "INFO", "message": "Trading state manager initialized", "module": "trading_state", "line": 41}
+{"timestamp": "2025-08-21 05:33:50,572", "name": "system", "level": "INFO", "message": "Trading state manager initialized", "module": "trading_state", "line": 41}
+{"timestamp": "2025-08-21 05:33:50,619", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:33:50,736", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:33:50,787", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:33:50,837", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:33:50,881", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:33:50,929", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:33:50,990", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:33:51,036", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:33:51,077", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:33:51,135", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:34:13,631", "name": "system", "level": "INFO", "message": "Trading state manager initialized", "module": "trading_state", "line": 41}
+{"timestamp": "2025-08-21 05:34:13,660", "name": "system", "level": "INFO", "message": "Database initialized successfully", "module": "database_manager", "line": 54}
+{"timestamp": "2025-08-21 05:34:13,661", "name": "system", "level": "INFO", "message": "Trading state reset", "module": "trading_state", "line": 112}

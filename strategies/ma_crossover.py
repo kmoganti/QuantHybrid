@@ -11,7 +11,7 @@ from .base_strategy import BaseStrategy
 
 logger = get_logger('ma_crossover_strategy')
 
-class MovingAverageCrossoverStrategy(BaseStrategy):
+class MACrossoverStrategy(BaseStrategy):
     """
     A strategy that trades based on moving average crossovers.
     When the fast MA crosses above the slow MA, it generates a buy signal.
