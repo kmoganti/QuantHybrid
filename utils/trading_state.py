@@ -35,6 +35,10 @@ class TradingState:
             'strategy_engine': False
         }
         self._strategy_status = {}
+        self._warnings = set()
+        self._position_size_factor = 1.0
+        self._trading_mode = 'normal'
+        self._cooldown_until = None
         self._lock = Lock()
         self._initialized = True
         
@@ -62,6 +66,10 @@ class TradingState:
             self._emergency_stop = True
             self._trading_enabled = False
             logger.critical("EMERGENCY STOP triggered")
+
+    # Compatibility helpers for monitoring
+    def set_emergency_stop(self) -> None:
+        self.emergency_stop()
     
     def reset_emergency_stop(self) -> None:
         """Reset emergency stop state."""
@@ -101,6 +109,32 @@ class TradingState:
             'strategy_status': self._strategy_status.copy()
         }
 
+    # Warning management used by SafetyMonitor
+    def set_warning(self, warning: str) -> None:
+        with self._lock:
+            self._warnings.add(warning)
+
+    def clear_warning(self, warning: str) -> None:
+        with self._lock:
+            self._warnings.discard(warning)
+
+    def get_warnings(self) -> Any:
+        return list(self._warnings)
+
+    # Circuit breaker management hooks
+    def set_position_size_factor(self, factor: float) -> None:
+        with self._lock:
+            self._position_size_factor = max(0.0, min(1.0, factor))
+
+    def set_trading_mode(self, mode: str) -> None:
+        with self._lock:
+            self._trading_mode = mode
+
+    def set_cooldown(self, td) -> None:
+        from datetime import datetime, timedelta
+        with self._lock:
+            self._cooldown_until = datetime.now() + (td if isinstance(td, timedelta) else timedelta())
+
     def reset(self) -> None:
         """Reset trading state to defaults for tests."""
         with self._lock:
@@ -109,4 +143,8 @@ class TradingState:
             for key in list(self._component_status.keys()):
                 self._component_status[key] = False
             self._strategy_status.clear()
+            self._warnings.clear()
+            self._position_size_factor = 1.0
+            self._trading_mode = 'normal'
+            self._cooldown_until = None
             logger.info("Trading state reset")
