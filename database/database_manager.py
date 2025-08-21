@@ -45,6 +45,7 @@ class DatabaseManager:
             class_=AsyncSession, 
             expire_on_commit=False
         )
+        self._initialized = False
     
     async def init_db(self):
         """Initialize database tables."""
@@ -52,9 +53,19 @@ class DatabaseManager:
             async with self.engine.begin() as conn:
                 await conn.run_sync(Base.metadata.create_all)
             logger.info("Database initialized successfully")
+            self._initialized = True
         except Exception as e:
             logger.error(f"Failed to initialize database: {str(e)}")
             raise
+
+    # Compatibility methods expected by tests
+    async def initialize(self, test_mode: bool = False):
+        """Alias used by tests to (re)initialize the database."""
+        await self.init_db()
+
+    def initialize_database(self):
+        """Synchronous shim used by some tests to initialize schema."""
+        asyncio.get_event_loop().run_until_complete(self.init_db())
     
     async def add_item(self, item: Any) -> bool:
         """Add a single item to the database."""
